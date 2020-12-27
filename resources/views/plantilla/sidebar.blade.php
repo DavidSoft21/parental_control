@@ -1,50 +1,40 @@
 <!-- sidebar: style can be found in sidebar.less -->
 <section class="sidebar">
-<!-- Sidebar user panel (optional) -->
-  <div class="user-panel">
-    <div class="pull-left image">
-      <img src="{{ asset('img/logo.png') }}" class="img-circle" alt="User Image">
+  <!-- Sidebar user panel (optional) -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="{{ asset('img/logo.png') }}" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p>Administrador</p>
+        <!-- Status -->
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
     </div>
-    <div class="pull-left info">
-      <p>Administrador</p>
-      <!-- Status -->
-      <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-    </div>
-  </div>
-<!-- Sidebar Menu -->
-<ul class="sidebar-menu" data-widget="tree">
+  <!-- Sidebar Menu -->
+  <ul class="sidebar-menu" data-widget="tree">
       <li class="treeview">
-        <a href="#"><i class="fa fa-gears"></i> <span>Opciones</span>
+        <a href="#"><i class="fa fa-gears"></i> <span>Gestionar</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu">
-          <li><a href="#">Opciones</a></li>
-        </ul>
+          <ul class="treeview-menu">
+              <li><a href="personas">Personas</a></li>
+              <li><a href="ciudades">Ciudades</a></li>
+          </ul>
       </li>
-
-    <li class="treeview">
-      <a href="#"><i class="glyphicon glyphicon-duplicate"></i><span>Otros</span>
-        <span class="pull-right-container">
-          <i class="fa fa-angle-left pull-right"></i>
-        </span>
-      </a>
-        <ul class="treeview-menu">
-          <li><a href="#">Otros</a></li>
-        </ul>
-    </li>
-
-    <li class="treeview">
-      <a href="#"><i class="glyphicon glyphicon-copy"></i> <span>Cines</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-      </a>
-        <ul class="treeview-menu">
-            <li><a href="#">Cines</a></li>
-        </ul>
-    </li>
-</ul>
-<!-- /.sidebar-menu -->
-</section>
+  
+      <li class="treeview">
+        <a href="#"><i class="glyphicon glyphicon-copy"></i> <span>Repositorio</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+          <ul class="treeview-menu">
+              <li><a href="#">Ir a Github</a></li>
+          </ul>
+      </li>
+  </ul>
+  <!-- /.sidebar-menu -->
+  </section>

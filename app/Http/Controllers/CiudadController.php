@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ciudad;
 
 class CiudadController extends Controller
 {
@@ -13,7 +14,9 @@ class CiudadController extends Controller
      */
     public function index()
     {
-        //
+        $ciudades = Ciudad::all();   
+        //dd($ciudades);
+        return view('Ciudad.index',compact('ciudades'));
     }
 
     /**

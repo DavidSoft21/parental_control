@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Parental Control</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                /** background-color: #fff; */
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -30,6 +30,10 @@
                 justify-content: center;
             }
 
+            .card-img{
+                height: 5%;
+                width: 100%;
+            }
             .position-ref {
                 position: relative;
             }
@@ -58,6 +62,19 @@
                 text-transform: uppercase;
             }
 
+            footer{
+
+                position: relative;
+                text-align: center;
+                padding: 5px 0;
+                color: #fff;
+                color: rgba(0, 0,0);
+                display: block;
+                z-index: 10;
+                background: rgba(0, 0, 0, 0.1);
+                text-decoration: none;
+
+            }
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -80,21 +97,34 @@
             @endif
 
             <div class="content">
+              
+                
                 <div class="title m-b-md">
-                    Laravel
+                    Parental Control
                 </div>
+                
+                <div class="card bg-dark text-white">
+                    <img class="card-img" src="{{ asset('img/PC_BLACK1.jpeg') }}" alt="Parental Control">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text"></p>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
+                    <a href="https://github.com/DavidSoft21/parental_control">Ir a GitHub Project</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>
+        <footer class="main-footer">
+            <center>
+                @include('plantilla/footer')
+            </center>
+        </footer>
     </body>
+
 </html>

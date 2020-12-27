@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}" />
-  <title> MaxiVideo </title>
+  <title> Parental Control </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="{{ asset ('bower_components/bootstrap/dist/css/bootstrap.min.css') }} ">
@@ -46,8 +46,8 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          MaxiVideo
-          <small>Las mejores peliculas en un solo lugar!</small>
+          Parental Control
+          <small>By Emer Riascos</small>
         </h1>
       </section>
       <!-- Main content -->

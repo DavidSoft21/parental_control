@@ -1,9 +1,9 @@
 <!-- Logo -->
 <a href="index2.html" class="logo">
   <!-- mini logo for sidebar mini 50x50 pixels -->
-  <span class="logo-mini"><b>Maxi</b>Video</span>
+  <span class="logo-mini"><b>Parental</b>Control</span>
   <!-- logo for regular state and mobile devices -->
-  <span class="logo-lg"><b>Maxi</b>Video</span>
+  <span class="logo-lg"><b>Parental</b>Control</span>
 </a>
 
 <nav class="navbar navbar-static-top" role="navigation">
@@ -21,12 +21,11 @@
           <!-- The user image in the navbar-->
           <img src="{{ asset('img/logo.png') }}" class="user-image" alt="User Image">
           <!-- hidden-xs hides the username on small devices so only the image appears. -->
-          <span class="hidden-xs">Administrador</span>
-        </a>
+          <span class="hidden-xs">{{ Auth::user()->name }}</span></a>
         <ul class="dropdown-menu">
           <!-- The user image in the menu -->
           <li class="user-header">
-            <img src="{{ asset('img/logo.png') }}" class="img-circle" alt="User Image">
+            <img src="{{ asset('img/logo.png') }}" class="img-circle" alt="{{ Auth::user()->name }}">
 
             <p>
               Administrador
