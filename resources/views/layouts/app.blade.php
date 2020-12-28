@@ -71,10 +71,18 @@
                 </div>
             </div>
         </nav>
+        
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+     <i class="fas fa-divide    "></i>
+
+     <footer class="main-footer" style="margin-top: 17%">
+        <center>
+            @include('plantilla/footer')
+        </center>
+    </footer>
 </body>
 </html>

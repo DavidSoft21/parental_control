@@ -32,7 +32,7 @@
             </span>
         </a>
           <ul class="treeview-menu">
-              <li><a href="#">Ir a Github</a></li>
+              <li><a href="https://github.com/DavidSoft21/parental_control">Ir a Github</a></li>
           </ul>
       </li>
   </ul>

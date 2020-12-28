@@ -18,13 +18,16 @@
                         <tr>
                             <th>ID</th>
                             <th>NOMBRE</th>
-                        
+                            <th>CREADO</th>
+                            <th>EDITADO</th>
                         </tr>
                     </thead>
                     @foreach($ciudades as $ciudad)
                     <tr>
                         <td>{{$ciudad->id}}</td>
                         <td>{{$ciudad->nombre}}</td>
+                        <td>{{$ciudad->created_at}}</td>
+                        <td>{{$ciudad->updated_at}}</td>
                         <td colspan="3">
                             <div class="btn-group btn-md" role="group">
                                 <a href="{{ route('ciudades.edit', $ciudad->id)}}">
@@ -49,5 +52,8 @@
 @endsection
 
 @push('scripts')
-<script src="{{ asset('/js/alquiler.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+<script src="{{ asset('/js/ciudad.js') }}"></script>
 @endpush
