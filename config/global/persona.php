@@ -1,0 +1,14 @@
+<?php
+define('PERSON_FIELD_ID','id');
+define('PERSON_FIELD_DOCUMENT_NUMBER','numero_documento');
+define('PERSON_FIELD_FIRST_NAME','primer_nombre');
+define('PERSON_FIELD_SECOND_NAME','segundo_nombre');
+define('PERSON_FIELD_FIRST_SURNAME','primer_apellido');
+define('PERSON_FIELD_SECOND_SURNAME','segundo_apellido');
+define('PERSON_FIELD_DIRECTION','direccion');
+define('PERSON_FIELD_CELL_PHONE','celular');
+define('PERSON_FIELD_BIRTHDATE','fecha_nacimiento');
+define('PERSON_FIELD_CITY_ID','ciudad_id');
+define('PERSON_FIELD_FATHER_ID','padre_id');
+define('PERSON_FIELD_MOTHER_ID','madre_id');
+define('PERSON_FIELD_SEX','sexo');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CiudadCreateRequest;
+use App\Http\Requests\CiudadActualizarRequest;
 use App\Ciudad;
 
 class CiudadController extends Controller
@@ -26,7 +28,7 @@ class CiudadController extends Controller
      */
     public function create()
     {
-        //
+        return view('Ciudad.create');
     }
 
     /**
@@ -35,9 +37,10 @@ class CiudadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CiudadCreateRequest $request)
     {
-        //
+        $request->crearCiudad();
+        return redirect('/ciudades');
     }
 
     /**
@@ -59,7 +62,8 @@ class CiudadController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ciudad = Ciudad::find($id);
+        return view('Ciudad.edit',compact('ciudad'));
     }
 
     /**
@@ -69,9 +73,11 @@ class CiudadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CiudadActualizarRequest $request, $id)
     {
-        //
+        $ciudad = Ciudad::find($id);
+        $request->actualizarCiudad($ciudad);
+        return redirect('/ciudades');
     }
 
     /**
@@ -82,6 +88,9 @@ class CiudadController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ciudad = Ciudad::find($id);
+        $ciudad->delete();
+
+        return redirect('/ciudades');
     }
 }

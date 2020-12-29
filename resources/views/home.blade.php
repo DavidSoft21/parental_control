@@ -31,5 +31,5 @@
 @endsection
 
 @push('scripts')
-<script src="{{ asset('/js/alquiler.js') }}"></script>
+
 @endpush

@@ -10,7 +10,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <a href="/ciudades/create/" class="btn btn-primary">Crear</a>
+                <a href="{{ route('ciudades.index') }}" class="btn btn-primary">Crear</a>
                 <br>
                 <br>
                 <table id="table" class="table table-bordered table-striped">
@@ -52,8 +52,5 @@
 @endsection
 
 @push('scripts')
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 <script src="{{ asset('/js/ciudad.js') }}"></script>
 @endpush

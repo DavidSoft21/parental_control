@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Persona;
 class PersonaController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class PersonaController extends Controller
      */
     public function index()
     {
-        //
+        $personas = Persona::all();   
+        //dd($personas);
+        return view('Persona.index',compact('personas'));
     }
 
     /**

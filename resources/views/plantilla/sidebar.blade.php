@@ -20,8 +20,8 @@
             </span>
         </a>
           <ul class="treeview-menu">
-              <li><a href="personas">Personas</a></li>
-              <li><a href="ciudades">Ciudades</a></li>
+              <li><a href="{{ route('personas.index') }}">Personas</a></li>
+              <li><a href="{{ route('ciudades.index') }}">Ciudades</a></li>
           </ul>
       </li>
   
