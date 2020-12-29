@@ -1,17 +1,3 @@
-PERSON_FIELD_ID id
-PERSON_FIELD_DOCUMENT_NUMBER numero_documento
-PERSON_FIELD_FIRST_NAME primer_nombre
-PERSON_FIELD_SECOND_NAME segundo_nombre
-PERSON_FIELD_FIRST_SURNAME primer_apellido
-PERSON_FIELD_SECOND_SURNAME segundo_apellido
-PERSON_FIELD_DIRECTION direccion
-PERSON_FIELD_CELL_PHONE celular
-PERSON_FIELD_BIRTHDATE fecha_nacimiento
-PERSON_FIELD_CITY_ID ciudad_id
-PERSON_FIELD_FATHER_ID padre_id
-PERSON_FIELD_MOTHER_ID madre_id
-PERSON_FIELD_SEX sexo
-
 <!--field persona id -->
 <div class="form-group col-md-6">
     <label for="{{PERSON_FIELD_ID}}">ID</label>
@@ -59,3 +45,60 @@ PERSON_FIELD_SEX sexo
     <label for="{{PERSON_FIELD_CELL_PHONE}}">CELULAR</label>
     <input type="text" class="form-control" name="personas[celular]" id="{{PERSON_FIELD_CELL_PHONE}}" placeholder="CELULAR" value="{{old('persona.celular', isset($persona->celular)) ? $persona->celular : ''}}"> 
 </div>
+
+<!--field  fecha nacimiento -->
+<div class="form-group col-md-6">
+    <label for="{{PERSON_FIELD_BIRTHDATE}}">FECHA NACIMIENTO</label>
+    <input type="date" class="form-control" name="personas[fecha_nacimiento]" id="{{PERSON_FIELD_BIRTHDATE}}" value="{{old('persona.fecha_nacimiento', isset($persona->fecha_nacimiento) ? $persona->fecha_nacimiento : '')}}">
+</div>
+
+<!--field ciudad -->
+<div class="form-group col-md-6">
+    <label for="{{PERSON_FIELD_CITY_ID}}">CIUDAD</label>
+    <select class="form-control select2" name="personas[ciudad_id]" id="{{PERSON_FIELD_CITY_ID}}">
+    <option value="">Seleccionar...</option>
+        @foreach ($ciudades as $ciudad)
+        <option value="{{ $ciudad->id }}" {{old('persona.ciudad_id', isset($persona->ciudad_id) ? $persona->ciudad_id : '') == $ciudad->id ? ' selected' : '' }}> {{ $ciudad->nombre}} </option>
+        @endforeach
+    </select>
+</div>
+
+<!--field madre -->
+<div class="form-group col-md-6">
+    <label for="{{PERSON_FIELD_MOTHER_ID}}">MADRE</label>
+    <select class="form-control select2" name="personas[madre_id]" id="{{PERSON_FIELD_MOTHER_ID}}">
+    
+        @foreach ($madres as $madre)
+            @if($loop->first)
+                <option value="">Seleccionar...</option>
+            @else
+                <option value="{{ $madre->id }}" {{old('persona.madre_id', isset($madre->madre_id) ? $madre->madre_id : '') == $persona->id ? ' selected' : '' }}> {{ $madre->id }} - {{ $madre->primer_nombre}} , {{ $madre->primer_apellido}} </option>
+            @endif
+        @endforeach
+    </select>
+</div>
+
+<!--field padre -->
+<div class="form-group col-md-6">
+    <label for="{{PERSON_FIELD_FATHER_ID}}">PADRE</label>
+    <select class="form-control select2" name="personas[padre_id]" id="{{PERSON_FIELD_FATHER_ID}}">
+    <option value="">Seleccionar...</option>
+        @foreach ($padres as $padre)
+            <option value="{{ $padre->id }}" {{old('persona.padre_id', isset($padre->padre_id) ? $padre->padre_id : '') == $persona->id ? ' selected' : '' }}> {{ $padre->id }} - {{ $padre->primer_nombre}} , {{ $padre->primer_apellido}} </option>
+        @endforeach
+    </select>
+</div>
+
+<!--field sexo -->
+<div class="form-group col-md-6">
+    <label for="{{PERSON_FIELD_SEX}}">GENERO</label><br>
+    @foreach ($generos as $key => $genero)<br>
+        <label><input type="radio" id="{{PERSON_FIELD_SEX}}" name="{{PERSON_FIELD_SEX}}" value="{{ $key }}" {{old('persona.sexo', isset($persona->sexo) ? $persona->sexo : '' ) == $key ? ' checked' : '' }}>{{ $genero }}
+    @endforeach
+</div>
+
+
+
+
+
+

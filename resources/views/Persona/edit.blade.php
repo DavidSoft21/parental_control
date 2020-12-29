@@ -6,7 +6,7 @@
         <!-- general form elements -->
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">CIUDAD</h3>
+                <h3 class="box-title">PERSONA</h3>
             </div>
             <!-- /.box-header -->
             @if ($errors->any())
@@ -20,19 +20,19 @@
                 </div><br/>
             @endif 
             <!-- form start -->
-            <form method="post" role="form" action=" {{ route('ciudades.update', $ciudad->id) }} " enctype="multipart/form-data">
+            <form method="post" role="form" action=" {{ route('personas.update', $persona->id) }} " enctype="multipart/form-data">
 
                 <div class="box-body">
                     @csrf
                     @method('PATCH')
 
 
-                    @include('ciudad._fields')
+                    @include('persona._fields')
 
 
                     <div class="col-md-16">
                         <div class="pull-right">
-                            <a href="{{ route('ciudades.index') }}" class="btn btn-danger">Cancelar</a>
+                            <a href="{{ route('personas.index') }}" class="btn btn-danger">Cancelar</a>
                             <button type="submit" class="btn btn-primary">Editar</button>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('/js/ciudad.js') }}"></script>
+    <script src="{{ asset('/js/persona.js') }}"></script>
 @endpush
 
 

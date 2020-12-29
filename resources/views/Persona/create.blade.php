@@ -25,7 +25,7 @@
                     @csrf
 
 
-                    @include('persona._fields')
+                    @include('Persona._fields')
 
                     
                     <div class="col-md-16">

@@ -3,7 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use carbon\Carbon;
+use App\Ciudad;
+use App\Persona;
 class PersonaActualizarRequest extends FormRequest
 {
     /**
@@ -13,7 +15,7 @@ class PersonaActualizarRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
