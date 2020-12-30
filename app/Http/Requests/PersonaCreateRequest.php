@@ -58,7 +58,7 @@ class PersonaCreateRequest extends FormRequest
         ];
     }
 
-    public function crearCiudad()
+    public function crearPersona()
     {
         $datos = $this->validated();
         $persona = Persona::create([

@@ -55,7 +55,7 @@ class PersonaController extends Controller
     public function store(PersonaCreateRequest $request)
     {
         $request->crearPersona();
-        return redirect('/personas')->with('success', MESSAGE_SAVE_SUCCESS);
+        return redirect('/personas');
     }
 
     /**
@@ -66,7 +66,10 @@ class PersonaController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $hijos = Persona::where('padre_id','=',$id)->orWhere('madre_id','=',$id)->get();
+        return view('Persona.show',compact('hijos'));
+      
     }
 
     /**
@@ -101,9 +104,11 @@ class PersonaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PersonaActualizarRequest $request, $id)
     {
-        //
+        $persona = persona::find($id);
+        $request->actualizarPersona($persona);
+        return redirect('/personas');
     }
 
     /**
@@ -114,6 +119,9 @@ class PersonaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $persona = Persona::find($id);
+        $persona->delete();
+
+        return redirect('/personas');
     }
 }

@@ -10,7 +10,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <a href="{{ route('ciudades.index') }}" class="btn btn-primary">Crear</a>
+                <a href="{{ route('ciudades.create') }}" class="btn btn-primary">Crear</a>
                 <br>
                 <br>
                 <table id="table" class="table table-bordered table-striped">

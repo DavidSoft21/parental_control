@@ -6,7 +6,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">PERSONA</h3>
+                <h3 class="box-title">HIJOS</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -27,28 +27,24 @@
                             <th>SEXO</th>
                         </tr>
                     </thead>
-                    @foreach($personas as $persona)
+                    @foreach($hijos as $hijo)
                     <tr>
-                        <td>{{$persona->id}}</td>
-                        <td>{{$persona->numero_documento}}</td>
-                        <td>{{$persona->primer_nombre}}</td>
-                        <td>{{$persona->segundo_nombre}}</td>
-                        <td>{{$persona->primer_apellido}}</td>
-                        <td>{{$persona->segundo_apellido}}</td>
-                        <td>{{$persona->ciudad->nombre}}</td>
-                        <td>{{$persona->direccion}}</td>
-                        <td>{{$persona->sexo}}</td>
+                        <td>{{$hijo->id}}</td>
+                        <td>{{$hijo->numero_documento}}</td>
+                        <td>{{$hijo->primer_nombre}}</td>
+                        <td>{{$hijo->segundo_nombre}}</td>
+                        <td>{{$hijo->primer_apellido}}</td>
+                        <td>{{$hijo->segundo_apellido}}</td>
+                        <td>{{$hijo->ciudad->nombre}}</td>
+                        <td>{{$hijo->direccion}}</td>
+                        <td>{{$hijo->sexo}}</td>
                         <td colspan="3">
                             <div class="btn-group btn-md" role="group">
-                                <a href="{{ route('personas.edit', $persona->id)}}">
+                                <a href="{{ route('personas.edit', $hijo->id)}}">
                                     <button class="btn btn-primary" style="width:80px ">Editar</button>
                                 </a>
-
-                                <a href="{{ route('personas.show', $persona->id)}}">
-                                    <button class="btn btn-info" style="width:80px ">Ver Hijos</button>
-                                </a>
                                 
-                                <form method="POST" role="form" action=" {{ route('personas.destroy', $persona->id) }} " enctype="multipart/form-data">
+                                <form method="POST" role="form" action=" {{ route('personas.destroy', $hijo->id) }} " enctype="multipart/form-data">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger" style="width:80px">Eliminar</button>
