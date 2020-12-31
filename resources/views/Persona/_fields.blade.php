@@ -72,7 +72,7 @@
             @if($loop->first)
                 <option value="">Seleccionar...</option>
             @else
-                <option value="{{ $madre->id }}" {{old('persona.madre_id', isset($madre->madre_id) ? $madre->madre_id : '') == $madre->id ? ' selected' : '' }}> {{ $madre->id }} - {{ $madre->primer_nombre}} , {{ $madre->primer_apellido}} </option>
+                <option value="{{ $madre->id }}" {{old('persona.madre_id', isset($madre->id) ? $madre->id : '') == $persona->madre_id ? ' selected' : '' }}> {{ $madre->id }} - {{ $madre->primer_nombre}} , {{ $madre->primer_apellido}} </option>
             @endif
         @endforeach
     </select>
@@ -84,7 +84,7 @@
     <select class="form-control select2" name="personas[padre_id]" id="{{PERSON_FIELD_FATHER_ID}}">
     <option value="">Seleccionar...</option>
         @foreach ($padres as $padre)
-            <option value="{{ $padre->id }}" {{old('persona.padre_id', isset($padre->padre_id) ? $padre->padre_id : '') == $padre->id ? ' selected' : '' }}> {{ $padre->id }} - {{ $padre->primer_nombre}} , {{ $padre->primer_apellido}} </option>
+            <option value="{{ $padre->id }}" {{old('persona.padre_id', isset($padre->id) ? $padre->id : '') == $persona->padre_id ? ' selected' : '' }}> {{ $padre->id }} - {{ $padre->primer_nombre}} , {{ $padre->primer_apellido}} </option>
         @endforeach
     </select>
 </div>
